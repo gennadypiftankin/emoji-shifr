@@ -17,9 +17,12 @@
   var cb = { peers: null, state: null, event: null, status: null };
   var offset = 0, stateLive = false, pubTimer = null, pubPending = false, lastPub = 0, hb = null, sweep = null, online = false, stateSeq = 0;
 
+  /* Для тестов: ?broker=ws://127.0.0.1:9001 — принимаем только локальный адрес */
   function override() {
     var m = /[?&]broker=([^&#]+)/.exec(location.search);
-    return m ? decodeURIComponent(m[1]) : null;
+    if (!m) return null;
+    var u = decodeURIComponent(m[1]);
+    return /^wss?:\/\/(localhost|127\.0\.0\.1)(:\d+)?(\/[^\s]*)?$/.test(u) ? u : null;
   }
   function brokerIndex(c) { var d = parseInt(String(c).charAt(0), 10); return isNaN(d) || d < 1 ? 0 : (d - 1) % BROKERS.length; }
   function brokerFor(c) { var o = override(); return o ? { url: o } : BROKERS[brokerIndex(c)]; }
