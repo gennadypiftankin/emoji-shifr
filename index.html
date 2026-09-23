@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Эмодзи-шифр</title>
+<meta name="description" content="Игра-викторина: расшифруй название мультфильма, книги, сказки, пословицу или фразеологизм по эмодзи. Играй один или с друзьями — кто быстрее!">
+<meta name="theme-color" content="#0A1530">
+<meta property="og:title" content="Эмодзи-шифр — викторина в смайликах">
+<meta property="og:description" content="Разгадай фразу, спрятанную в эмодзи! Один или с друзьями — кто быстрее.">
+<link rel="icon" href="e/1f510.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/unbounded-cyrillic-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/rubik-bubbles-cyrillic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css?v=1">
+</head>
+<body>
+<div class="app">
+  <header class="topbar" id="topbar"></header>
+  <main id="app" aria-live="polite"></main>
+</div>
+<div id="modal" hidden></div>
+<div class="toast-wrap" id="toasts" aria-live="assertive"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<noscript><p style="padding:24px;color:#fff;font-family:sans-serif">Для игры включите JavaScript.</p></noscript>
+<script src="js/emoji.js?v=1"></script>
+<script src="js/match.js?v=1"></script>
+<script src="js/data/_base.js?v=1"></script>
+<script src="js/data/tales.js?v=1"></script>
+<script src="js/data/screen.js?v=1"></script>
+<script src="js/data/books.js?v=1"></script>
+<script src="js/data/proverbs.js?v=1"></script>
+<script src="js/data/idioms.js?v=1"></script>
+<script src="js/avatar.js?v=1"></script>
+<script src="js/sound.js?v=1"></script>
+<script src="js/net.js?v=1"></script>
+<script src="js/app.js?v=1"></script>
+</body>
+</html>
